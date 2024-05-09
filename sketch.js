@@ -79,7 +79,7 @@ function setup() {
   //text("drum loop", 25, 20);
 
   // set up the synthesis
-  drum.volume(0.5)
+  //drum.volume(0.5)
 
   polySynth = new p5.PolySynth();
   polySynth.setADSR(0.6, 0.7, 0.4, 0.9); // attackTime, decayTime, susRatio, releaseTime
