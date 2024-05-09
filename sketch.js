@@ -127,7 +127,7 @@ function draw() {
     // store the keypoint for the right wrist in a variable called "rightWrist"
     let currentWrist = createVector(pose.rightWrist.x, pose.rightWrist.y);
 
-    rightWrist = p5.Vector.lerp(currentWrist, prevRightWrist, 0.05);
+    rightWrist = p5.Vector.lerp(prevRightWrist, currentWrist, 0.25);
 
     image(img, rightWrist.x, rightWrist.y, 50, 50);
     prevRightWrist = rightWrist;
