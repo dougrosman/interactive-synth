@@ -79,6 +79,7 @@ function setup() {
   //text("drum loop", 25, 20);
 
   // set up the synthesis
+  drum.volume(0.5)
 
   polySynth = new p5.PolySynth();
   polySynth.setADSR(0.6, 0.7, 0.4, 0.9); // attackTime, decayTime, susRatio, releaseTime
@@ -124,7 +125,7 @@ function draw() {
     // store the first pose in a variable called "pose"
     let pose = poses[0].pose;
     let nose = createVector(pose.nose.x, pose.nose.y);
-    fill(255, 0, 0);
+    fill(255, 255, 0);
     ellipse(nose.x, nose.y, 20, 20);
 
     // store the keypoint for the right wrist in a variable called "rightWrist"
