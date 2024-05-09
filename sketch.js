@@ -123,6 +123,9 @@ function draw() {
   if (poses.length > 0) {
     // store the first pose in a variable called "pose"
     let pose = poses[0].pose;
+    let nose = createVector(pose.nose.x, pose.nose.y);
+    fill(255, 0, 0);
+    ellipse(nose.x, nose.y, 20, 20);
 
     // store the keypoint for the right wrist in a variable called "rightWrist"
     let currentWrist = createVector(pose.rightWrist.x, pose.rightWrist.y);
