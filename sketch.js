@@ -79,7 +79,7 @@ function setup() {
   //text("drum loop", 25, 20);
 
   // set up the synthesis
-  drum.setVolume(0.325)
+  drum.setVolume(0.3)
 
   polySynth = new p5.PolySynth();
   polySynth.setADSR(0.6, 0.7, 0.4, 0.9); // attackTime, decayTime, susRatio, releaseTime
@@ -132,7 +132,7 @@ function draw() {
     // okay we're actually using the nose position because it is more reliable for posenet...but i didn't feel like changing the variable names so everything still says wrist (but it's actually nose).
     let currentWrist = createVector(pose.nose.x, pose.nose.y);
 
-    rightWrist = p5.Vector.lerp(prevRightWrist, currentWrist, 0.325);
+    rightWrist = p5.Vector.lerp(prevRightWrist, currentWrist, 0.75);
 
     image(img, rightWrist.x, rightWrist.y, 50, 50);
     prevRightWrist = rightWrist;
