@@ -22,9 +22,9 @@ const options = {
   imageScaleFactor: 0.3,
   outputStride: 16, // 8, 16 (larger = faster/less accurate)
   flipHorizontal: true,
-  minConfidence: 0.8,
+  minConfidence: 0.98,
   maxPoseDetections: 1, // 5 is the max
-  scoreThreshold: 0.8,
+  scoreThreshold: 0.98,
   nmsRadius: 20,
   detectionType: "multiple",
   inputResolution: 257, // 161, 193, 257, 289, 321, 353, 385, 417, 449, 481, 513, or 801, smaller = faster/less accurate
