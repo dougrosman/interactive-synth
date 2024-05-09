@@ -20,9 +20,9 @@ let isInside = false;
 const options = {
   architecture: "MobileNetV1",
   imageScaleFactor: 0.3,
-  outputStride: 8, // 8, 16 (larger = faster/less accurate)
+  outputStride: 16, // 8, 16 (larger = faster/less accurate)
   flipHorizontal: true,
-  minConfidence: 0.5,
+  minConfidence: 0.8,
   maxPoseDetections: 1, // 5 is the max
   scoreThreshold: 0.8,
   nmsRadius: 20,
