@@ -20,11 +20,11 @@ let isInside = false;
 const options = {
   architecture: "MobileNetV1",
   imageScaleFactor: 0.3,
-  outputStride: 16, // 8, 16 (larger = faster/less accurate)
+  outputStride: 8, // 8, 16 (larger = faster/less accurate)
   flipHorizontal: true,
   minConfidence: 0.5,
-  maxPoseDetections: 2, // 5 is the max
-  scoreThreshold: 0.5,
+  maxPoseDetections: 1, // 5 is the max
+  scoreThreshold: 0.8,
   nmsRadius: 20,
   detectionType: "multiple",
   inputResolution: 257, // 161, 193, 257, 289, 321, 353, 385, 417, 449, 481, 513, or 801, smaller = faster/less accurate
