@@ -5,9 +5,9 @@ html, body {
 }
 canvas {
   display: block;
-  width: 100% !important;
+  /* width: 100% !important;
   height: 100% !important;
-  object-fit: contain;
+  object-fit: contain; */
   position: absolute;
   left: 50%;
   top: 50%;

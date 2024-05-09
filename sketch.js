@@ -10,8 +10,8 @@ PoseNet example using p5.js
 let capture;
 let poseNet;
 let poses = []; // this array will contain our detected poses (THIS IS THE IMPORTANT STUFF)
-const cam_w = 1280;
-const cam_h = 720;
+const cam_w = 640;
+const cam_h = 480;
 let rightWrist;
 let prevRightWrist;
 let oldestNote;
@@ -79,7 +79,7 @@ function setup() {
   //text("drum loop", 25, 20);
 
   // set up the synthesis
-  //drum.volume(0.5)
+  drum.setVolume(0.325)
 
   polySynth = new p5.PolySynth();
   polySynth.setADSR(0.6, 0.7, 0.4, 0.9); // attackTime, decayTime, susRatio, releaseTime
@@ -124,14 +124,15 @@ function draw() {
   if (poses.length > 0) {
     // store the first pose in a variable called "pose"
     let pose = poses[0].pose;
-    let nose = createVector(pose.nose.x, pose.nose.y);
-    fill(255, 255, 0);
-    ellipse(nose.x, nose.y, 20, 20);
+    //let nose = createVector(pose.nose.x, pose.nose.y);
+    //fill(255, 255, 0);
+    //ellipse(nose.x, nose.y, 20, 20);
 
     // store the keypoint for the right wrist in a variable called "rightWrist"
-    let currentWrist = createVector(pose.rightWrist.x, pose.rightWrist.y);
+    // okay we're actually using the nose position because it is more reliable for posenet...but i didn't feel like changing the variable names so everything still says wrist (but it's actually nose).
+    let currentWrist = createVector(pose.nose.x, pose.nose.y);
 
-    rightWrist = p5.Vector.lerp(prevRightWrist, currentWrist, 0.25);
+    rightWrist = p5.Vector.lerp(prevRightWrist, currentWrist, 0.325);
 
     image(img, rightWrist.x, rightWrist.y, 50, 50);
     prevRightWrist = rightWrist;
